@@ -8,130 +8,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <!-- Logo in the head (not visible on the page) -->
   <link rel="icon" href="logo.JPG" type="image/jpeg">
-    <style>
-        .faq-section {
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-            background-color: lightsteelblue;
-            margin:0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
-        .faq-container {
-            width: 100%;
-            max-width: 600px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            font-size: 35px;
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .faq-category {
-            font-size: 20px;
-            font-weight: bold;
-            color: black;
-            margin-top: 20px;
-            border-bottom: 2px solid black;
-            padding-bottom: 5px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .question {
-            font-weight: bold;
-            cursor: pointer;
-            color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 10px;
-            transition: color 0.3s ease;
-            padding: 10px;
-            padding-left: 0;
-
-        }
-
-        .question:hover {
-            color: #0056b3;
-        }
-
-        .answer {
-            display: none;
-            margin-top: 10px;
-            color: #555;
-            font-size: 16px;
-            transition: all 1s ease-in-out;
-            padding: 0 10px;
-            padding-left: 0;
-        }
-
-        .faq-item.active .answer {
-            display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        .icon {
-            transition: transform 0.5s ease;
-        }
-
-        .faq-item.active .icon {
-            transform: rotate(180deg);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            .faq-container {
-                padding: 15px;
-            }
-            .question {
-                font-size: 16px;
-            }
-            .answer {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .faq-container {
-                padding: 10px;
-            }
-            .question {
-                font-size: 15px;
-            }
-            .answer {
-                font-size: 13px;
-            }
-        }
-    </style>
+  <style>
+    .faq-item.active .icon {
+      transform: rotate(180deg);
+    }
+    .faq-item .answer {
+      display: none;
+    }
+    .faq-item.active .answer {
+      display: block;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-br from-gray-100 to-gray-300 text-gray-800 font-sans">
   <img src="logo.JPG" alt="Logo" style="position: absolute; top: 80px; left: 0px; width: 80px; height: auto; z-index: 100;">
@@ -255,71 +142,100 @@
     </div>
   </section>
 
-<section class="faq-section">
-    <div class="faq-container">
-        <h2>Frequently Asked Question</h2>
+  <!-- FAQ Section -->
+  <section class="faq-section bg-white py-16">
+    <div class="faq-container max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-green-600 mb-12">Frequently Asked Questions</h2>
 
-        <div class="faq-category">General Questions</div>
+        <div class="faq-category text-2xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2">General Questions</div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">What is ShiftGenius? <span class="icon">▼</span></p>
-            <p class="answer">ShiftGenius is a smart, cloud-based workforce management platform designed to help businesses efficiently schedule shifts, track employee attendance, and streamline workforce operations.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                What is ShiftGenius? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">ShiftGenius is a smart, cloud-based workforce management platform designed to help businesses efficiently schedule shifts, track employee attendance, and streamline workforce operations.</p>
         </div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">Who can use ShiftGenius? <span class="icon">▼</span></p>
-            <p class="answer">ShiftGenius is designed for businesses of all sizes, including retail stores, restaurants, healthcare providers, and corporate offices that need to manage employee schedules.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                Who can use ShiftGenius? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">ShiftGenius is designed for businesses of all sizes, including retail stores, restaurants, healthcare providers, and corporate offices that need to manage employee schedules.</p>
         </div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">Is ShiftGenius available on mobile devices? <span class="icon">▼</span></p>
-            <p class="answer">Yes! ShiftGenius is accessible on desktop, tablet, and mobile devices, ensuring you can manage schedules and track attendance anytime, anywhere.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                Is ShiftGenius available on mobile devices? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">Yes! ShiftGenius is accessible on desktop, tablet, and mobile devices, ensuring you can manage schedules and track attendance anytime, anywhere.</p>
         </div>
 
-        <div class="faq-category">Features & Functionality</div>
+        <div class="faq-category text-2xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2 mt-12">Features & Functionality</div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">How does the shift scheduling feature work? <span class="icon">▼</span></p>
-            <p class="answer">Our intuitive scheduling system allows managers to create, edit, and publish shifts in real-time. Employees can also view their schedules, swap shifts (with manager approval), and receive updates.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                How does the shift scheduling feature work? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">Our intuitive scheduling system allows managers to create, edit, and publish shifts in real-time. Employees can also view their schedules, swap shifts (with manager approval), and receive updates.</p>
         </div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">Does ShiftGenius support real-time notifications? <span class="icon">▼</span></p>
-            <p class="answer">Absolutely! Employees and managers receive instant notifications for shift updates, approvals, reminders, and urgent changes.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                Does ShiftGenius support real-time notifications? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">Absolutely! Employees and managers receive instant notifications for shift updates, approvals, reminders, and urgent changes.</p>
         </div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">Can I integrate ShiftGenius with other tools? <span class="icon">▼</span></p>
-            <p class="answer">Yes, ShiftGenius supports integration with payroll systems, communication tools, and third-party HR platforms.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                Can I integrate ShiftGenius with other tools? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">Yes, ShiftGenius supports integration with payroll systems, communication tools, and third-party HR platforms.</p>
         </div>
 
-        <div class="faq-category">Pricing & Subscription</div>
+        <div class="faq-category text-2xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2 mt-12">Pricing & Subscription</div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">Is ShiftGenius free? <span class="icon">▼</span></p>
-            <p class="answer">ShiftGenius offers a free trial with basic features. We have different subscription plans depending on your business size and needs.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                Is ShiftGenius free? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">ShiftGenius offers a free trial with basic features. We have different subscription plans depending on your business size and needs.</p>
         </div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">What payment methods do you accept? <span class="icon">▼</span></p>
-            <p class="answer">We accept credit cards, PayPal, and bank transfers for monthly or yearly subscriptions.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                What payment methods do you accept? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">We accept credit cards, PayPal, and bank transfers for monthly or yearly subscriptions.</p>
         </div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">Can I cancel my subscription anytime? <span class="icon">▼</span></p>
-            <p class="answer">Yes, you can cancel your subscription at any time. However, refunds are subject to our cancellation policy.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                Can I cancel my subscription anytime? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">Yes, you can cancel your subscription at any time. However, refunds are subject to our cancellation policy.</p>
         </div>
 
-        <div class="faq-category">Support & Assistance</div>
+        <div class="faq-category text-2xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2 mt-12">Support & Assistance</div>
 
-        <div class="faq-item" onclick="toggleAnswer(this)">
-            <p class="question">How can I get support if I have an issue? <span class="icon">▼</span></p>
-            <p class="answer">You can reach out to our support team via email, live chat, or phone. We also have a help center with tutorials and guides.</p>
+        <div class="faq-item bg-white rounded-lg shadow-md mb-4 transition-all duration-300 hover:shadow-lg" onclick="toggleAnswer(this)">
+            <p class="question flex justify-between items-center p-6 text-lg font-semibold text-gray-700 cursor-pointer">
+                How can I get support if I have an issue? 
+                <span class="icon transform transition-transform duration-300">▼</span>
+            </p>
+            <p class="answer hidden px-6 pb-6 text-gray-600">You can reach out to our support team via email, live chat, or phone. We also have a help center with tutorials and guides.</p>
         </div>
-
     </div>
-
-</section>
+  </section>
 
   <footer class="bg-gray-800 text-white p-4 text-center mt-8">
     &copy; 2025 Employee Smart Roster. All rights reserved.
@@ -349,15 +265,6 @@
     gsap.from('nav', { duration: 1, y: -50, opacity: 0, ease: 'power2.out' });
     gsap.from('header h1', { duration: 1.2, scale: 0.8, opacity: 0, ease: 'elastic.out(1, 0.3)' });
     gsap.from('section', { duration: 1, y: 100, opacity: 0, stagger: 0.2 });
-
-    // function toggleAnswer(id) {
-    //     var answer = document.getElementById(id);
-    //     if (answer.style.display === "none" || answer.style.display === "") {
-    //         answer.style.display = "block";
-    //     } else {
-    //         answer.style.display = "none";
-    //     }
-    // }
 
     function toggleAnswer(faqItem) {
         faqItem.classList.toggle('active');
