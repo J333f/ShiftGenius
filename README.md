@@ -4,6 +4,6 @@
 
 # Employee Roastering Marketing Web  
 
-https://your-deployment-url.fly.dev/  
+[https://your-deployment-url.fly.dev/  ](https://j333f.github.io/ShiftGenius/)
 
 ## Project Structure  
